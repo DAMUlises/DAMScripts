@@ -1,0 +1,102 @@
+<!--
+   FonsLletra.html
+   
+   Copyright 2014 DAM <DAM@UVG>
+ 
+   
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>Canviant fons i lletra</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.23.1" />
+	
+	<style type="text/css">
+		.ocult { display: none; }
+		.visible { display: inline; }
+	</style>
+	<script>
+		function canvif(fons){
+			document.getElementById("cos").style.backgroundColor=fons;
+		}
+		function canvit(txt){
+			document.getElementById("cos").style.color=txt;
+		}
+		function color() {
+			var x=document.getElementsByTagName("p");
+			var i;
+			var b;
+			for (i in x){
+				x[i].className="visible";
+			}
+			var colors= ['black', 'blue', 'cyan', 'darkGray', 'gray', 'green', 'lightGray', 'magenta', 'orange', 'pink', 'red', 'white', 'yellow'];
+			
+			var lista = document.getElementsByTagName("select");
+			var option;
+			var option2;
+			
+				for (b=0;b<colors.length;b++){
+						option= document.createElement("option");
+						option2= document.createElement("option");
+						option.text = colors[b];
+						option2.text = colors[b];
+						lista[0].add(option);
+						lista[1].add(option2);
+						
+				}
+		}
+		function opcioFons(){
+			
+			var color=document.getElementById("fons").value;
+			canvif(color);
+		}
+		function opcioText(){
+			
+			var color=document.getElementById("txt").value;
+			canvit(color); 
+			
+		}
+		//~ function resulf(){
+			//~ var cf=opcioFons();
+			//~ canvif(cf);
+		//~ }
+		//~ function result(){
+			//~ var ct=opcioText();
+			//~ canvit(ct);
+		//~ }
+	</script>
+	
+</head>
+<body id="cos">
+	<h1 align="center">Canviant fons i lletra</h1>
+	<span id="main">
+	<blockquote><a href="#" onclick="javascript:document.body.style.backgroundColor='#ff0'; document.body.style.color='#00f';">Fons Groc i Lletra blava</a> </blockquote> 
+	<blockquote><a href="#" onclick="canvif('white'); canvit('red'); return false;">Fons Blanc i Lletra roja</a></blockquote>
+	<blockquote><a href="#" onclick="color(); return false;">Seleccionar colors</a></blockquote>
+	
+	<blockquote
+	form><p class="ocult">Color de Fondo
+	
+		<select id="fons" onblur="opcioFons();">    
+       
+		</select>
+	</form></p>
+		
+   <form><p class="ocult">Color de letra
+   
+	<select id="txt" onblur="opcioText();">    
+       
+	</select>
+   </form></p>
+   </blockquote>
+	
+		<p>Una manera sencilla de cambiar en javascript el fondo de una web (color o imagen) pulsando un link en javascript, por ejemplo vamos a crear una serie de links y que al pulsar sobre ellos cambie automaticamente el background o fondo actual de la página web.</p>
+		<p id="ps">El cambiar el color del texto en una página web da a los usuarios una experiencia interactiva inesperada y es uno de los modos más efectivos para impactar el diseño de las páginas web. Un usuario puede cambiar los colores del texto usando JavaScript y ajustes de estilo empleando una de las muchas técnicas en el código HTML.</p>
+	</span>
+</body>
+
+</html>
